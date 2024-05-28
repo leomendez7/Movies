@@ -6,15 +6,28 @@
 //
 
 import UIKit
+import Combine
 
-class MoviesViewController: UIViewController {
+public class MoviesViewController: BaseViewController<MoviesListViewModel> {
 
+    private var anyCancellable = Set<AnyCancellable>()
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Movies List"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        viewModel.coordinator.navigationController = navigationController
+        subscribeToViewModel()
+        Task { await self.viewModel.fetchMovies() }
+    }
+    
+    private func subscribeToViewModel() {
+        viewModel.reloadData.receive(on: DispatchQueue.main).sink { _  in } receiveValue: { _ in
+            self.tableView.reloadData()
+        }.store(in: &anyCancellable)
     }
     
     @IBAction func changeMovieOrder(_ sender: Any) {

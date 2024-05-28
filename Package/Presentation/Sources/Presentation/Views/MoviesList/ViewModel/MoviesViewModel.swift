@@ -1,8 +1,26 @@
 //
-//  File.swift
-//  
+//  MoviesListViewModel.swift
+//
 //
 //  Created by Leonardo Mendez on 27/05/24.
 //
 
-import Foundation
+import Combine
+import Domain
+
+public class MoviesListViewModel: BaseViewModel<FetchMoviesListUseCase, MovieFlowCoordinator> {
+    
+    var reloadData = PassthroughSubject<Void, Error>()
+    @Published var movies: [Movie] = []
+    
+    func fetchMovies() async {
+        do {
+            let movies = try await useCase.execute(requestValue: "")
+            self.movies = movies
+            reloadData.send()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+}

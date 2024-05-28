@@ -10,8 +10,14 @@ import Domain
 
 public class FetchMoviesListDataSource {
     
+    let urlBase: String
+    
+    public init(urlBase: String) {
+        self.urlBase = urlBase
+    }
+    
     public func fetchMoviesList() async throws -> [Movie] {
-        let urlString = "https://api.themoviedb.org/4/list/2?api_key=ecd808c2e2821a26fd7b166a9a01bbe8"
+        let urlString = urlBase
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)
         }
@@ -21,9 +27,35 @@ public class FetchMoviesListDataSource {
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw URLError(.badServerResponse)
         }
+        if let jsonString = String(data: data, encoding: .utf8) {
+            print("Response JSON String: \(jsonString)")
+        }
         let decoder = JSONDecoder()
-        let movieListResponse = try decoder.decode(MovieResponse.self, from: data)
-        return movieListResponse.results
+        do {
+            let movieListResponse = try decoder.decode(MovieResponse.self, from: data)
+            return movieListResponse.results
+        } catch let decodingError as DecodingError {
+            switch decodingError {
+            case .typeMismatch(let type, let context):
+                print("Tipo '\(type)' no coincide:", context.debugDescription)
+                print("Ruta de codificación:", context.codingPath)
+            case .valueNotFound(let type, let context):
+                print("Valor no encontrado para el tipo '\(type)':", context.debugDescription)
+                print("Ruta de codificación:", context.codingPath)
+            case .keyNotFound(let key, let context):
+                print("Clave '\(key)' no encontrada:", context.debugDescription)
+                print("Ruta de codificación:", context.codingPath)
+            case .dataCorrupted(let context):
+                print("Datos corruptos:", context.debugDescription)
+                print("Ruta de codificación:", context.codingPath)
+            default:
+                print("Error de decodificación:", decodingError.localizedDescription)
+            }
+            throw decodingError
+        } catch {
+            print("Error inesperado:", error)
+            throw error
+        }
     }
     
 }
