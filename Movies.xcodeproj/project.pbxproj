@@ -67,12 +67,7 @@
 		16FC12CB2C054DFC00C40301 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				16FC12CC2C054DFC00C40301 /* AppDelegate.swift */,
-				16FC12CE2C054DFC00C40301 /* SceneDelegate.swift */,
-				16FC12D02C054DFC00C40301 /* ViewController.swift */,
-				16FC12D22C054DFC00C40301 /* Main.storyboard */,
-				16FC12D52C054DFE00C40301 /* Assets.xcassets */,
-				16FC12D72C054DFE00C40301 /* LaunchScreen.storyboard */,
+				16FC12EB2C05523900C40301 /* Application */,
 				16FC12DA2C054DFE00C40301 /* Info.plist */,
 			);
 			path = Movies;
@@ -93,6 +88,43 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16FC12EB2C05523900C40301 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12ED2C05524E00C40301 /* DIContainers */,
+				16FC12EE2C05525900C40301 /* Launch */,
+				16FC12EF2C05526400C40301 /* Resources */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		16FC12ED2C05524E00C40301 /* DIContainers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DIContainers;
+			sourceTree = "<group>";
+		};
+		16FC12EE2C05525900C40301 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12CC2C054DFC00C40301 /* AppDelegate.swift */,
+				16FC12CE2C054DFC00C40301 /* SceneDelegate.swift */,
+				16FC12D02C054DFC00C40301 /* ViewController.swift */,
+				16FC12D22C054DFC00C40301 /* Main.storyboard */,
+				16FC12D72C054DFE00C40301 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		16FC12EF2C05526400C40301 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12D52C054DFE00C40301 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

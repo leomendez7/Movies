@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainController.swift
 //  Movies
 //
 //  Created by Leonardo Mendez on 27/05/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
