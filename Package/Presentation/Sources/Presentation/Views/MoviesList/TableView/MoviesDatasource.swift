@@ -18,7 +18,7 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: "moviesTableViewCell",
             for: indexPath
         ) as? MoviesTableViewCell else { return MoviesTableViewCell() }
-        
+        cell.config(movie: viewModel.movies[indexPath.row])
         return cell
     }
     

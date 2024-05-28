@@ -94,19 +94,19 @@ public struct ObjectIDS: Codable {
 }
 
 public struct Movie: Codable {
-    let backdropPath: String?
-    let id: Int?
-    let originalTitle, overview, posterPath: String?
-    let mediaType: MediaType?
-    let adult: Bool?
-    let title: String?
-    let originalLanguage: String? // Cambiado a String
-    let genreIDS: [Int]?
-    let popularity: Double?
-    let releaseDate: String?
-    let video: Bool?
-    let voteAverage: Double?
-    let voteCount: Int?
+    public let backdropPath: String?
+    public let id: Int?
+    public let originalTitle, overview, posterPath: String?
+    public let mediaType: MediaType?
+    public let adult: Bool?
+    public let title: String?
+    public let originalLanguage: String? // Cambiado a String
+    public let genreIDS: [Int]?
+    public let popularity: Double?
+    public let releaseDate: String?
+    public let video: Bool?
+    public let voteAverage: Double?
+    public let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
@@ -126,7 +126,7 @@ public struct Movie: Codable {
     }
 }
 
-enum MediaType: String, Codable {
+public enum MediaType: String, Codable {
     case movie = "movie"
 }
 

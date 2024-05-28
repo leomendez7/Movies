@@ -20,6 +20,7 @@ public class MoviesViewController: BaseViewController<MoviesListViewModel> {
         title = "Movies List"
         navigationController?.navigationBar.prefersLargeTitles = true
         viewModel.coordinator.navigationController = navigationController
+        tableView.rowHeight = UITableView.automaticDimension
         subscribeToViewModel()
         Task { await self.viewModel.fetchMovies() }
     }
