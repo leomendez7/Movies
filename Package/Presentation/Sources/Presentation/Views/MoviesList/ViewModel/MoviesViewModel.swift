@@ -59,15 +59,48 @@ public class MoviesListViewModel: BaseViewModel<FetchMoviesListUseCase, MovieFlo
     
     private func applySearchFilter() {
         if searchText.isEmpty {
+            isLoading = true
             movies.removeAll()
             originalMovies.forEach { movie in
                 movies.append(movie)
             }
         } else {
+            isLoading = false
             filteredMovies = originalMovies
             movies.removeAll()
             movies = filteredMovies.filter { $0.originalTitle?.lowercased().contains(searchText.lowercased()) ?? false }
         }
         sortedByPopularity ? sortedPopularity() : sortedTopRate()
     }
+    
+    func reset() {
+        isLoading = true
+        movies.removeAll()
+        originalMovies.forEach { movie in
+            self.movies.append(movie)
+        }
+        sortedByPopularity ? sortedPopularity() : sortedTopRate()
+    }
+    
+    func filterByAdult() {
+        isLoading = false
+        movies.removeAll()
+        movies = originalMovies.filter { $0.adult == true }
+        reloadData.send()
+    }
+    
+    func filterByOriginalLanguageEn() {
+        isLoading = false
+        movies.removeAll()
+        movies = originalMovies.filter { $0.originalLanguage == "en" }
+        sortedByPopularity ? sortedPopularity() : sortedTopRate()
+    }
+    
+    func filterByOriginalLanguageFr() {
+        isLoading = false
+        movies.removeAll()
+        movies = originalMovies.filter { $0.originalLanguage == "fr" }
+        sortedByPopularity ? sortedPopularity() : sortedTopRate()
+    }
+    
 }

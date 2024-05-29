@@ -20,10 +20,57 @@ public class MoviesViewController: BaseViewController<MoviesListViewModel> {
         super.viewDidLoad()
         title = "Movies List"
         navigationController?.navigationBar.prefersLargeTitles = false
+        let rightBarButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(didTapAddButton))
+        rightBarButton.tintColor = .black
+        navigationItem.rightBarButtonItem = rightBarButton
         viewModel.coordinator.navigationController = navigationController
         tableView.rowHeight = UITableView.automaticDimension
         subscribeToViewModel()
         Task { await self.viewModel.fetchMovies() }
+    }
+    
+    @objc private func didTapAddButton() {
+        let alert = UIAlertController(title: "Filter", message: "Select a filter criteria", preferredStyle: .actionSheet)
+        let filterByAdultAction = UIAlertAction(title: "Filter by Adult", style: .default) { _ in
+            self.viewModel.filterByAdult()
+        }
+        let filterByLanguageAction = UIAlertAction(title: "Filter by Original Language", style: .default) { _ in
+            self.filterByLanguage()
+        }
+        let filterByVoteAction = UIAlertAction(title: "Filter by Vote", style: .default) { _ in
+            //self.viewModel.filterByVote()
+        }
+        let reset = UIAlertAction(title: "Reset", style: .default) { _ in
+            self.viewModel.reset()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(filterByAdultAction)
+        alert.addAction(filterByLanguageAction)
+        alert.addAction(filterByVoteAction)
+        alert.addAction(reset)
+        alert.addAction(cancelAction)
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.barButtonItem = navigationItem.rightBarButtonItem
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func filterByLanguage() {
+        let alert = UIAlertController(title: "Language", message: "Select a Language", preferredStyle: .actionSheet)
+        let filterByEn = UIAlertAction(title: "Filter by english", style: .default) { _ in
+            self.viewModel.filterByOriginalLanguageEn()
+        }
+        let filterByFr = UIAlertAction(title: "Filter by french", style: .default) { _ in
+            self.viewModel.filterByOriginalLanguageFr()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(filterByEn)
+        alert.addAction(filterByFr)
+        alert.addAction(cancelAction)
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.barButtonItem = navigationItem.rightBarButtonItem
+        }
+        present(alert, animated: true, completion: nil)
     }
     
     private func subscribeToViewModel() {
@@ -70,6 +117,7 @@ extension MoviesViewController {
         viewModel.pages += 1
         Task { await self.viewModel.fetchMovies() }
     }
+    
 }
 
 extension MoviesViewController: UISearchBarDelegate {
@@ -87,4 +135,5 @@ extension MoviesViewController: UISearchBarDelegate {
         viewModel.searchMovies(with: "")
         searchBar.resignFirstResponder()
     }
+    
 }

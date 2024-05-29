@@ -15,6 +15,7 @@ class MoviesTableViewCell: UITableViewCell {
     @IBOutlet weak var popularityLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var upcommingLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +47,7 @@ class MoviesTableViewCell: UITableViewCell {
         popularityLabel.text = String(format: "Popularity: %.1f", movie.popularity ?? "")
         rateLabel.text = String(format: "Rate: %.1f", movie.voteAverage ?? "")
         upcommingLabel.text = String(format: "upcomming: %@", movie.releaseDate ?? "")
+        languageLabel.text = String(format: "Language: %@", movie.originalLanguage ?? "")
     }
     
 }
