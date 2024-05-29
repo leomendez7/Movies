@@ -28,7 +28,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HnO-u1-14m" customClass="movi">
-                                <rect key="frame" x="0.0" y="114" width="393" height="704"/>
+                                <rect key="frame" x="0.0" y="174" width="393" height="644"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="moviesTableViewCell" rowHeight="95" id="G8c-LN-HQs" customClass="MoviesTableViewCell" customModule="Presentation">
@@ -51,7 +51,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qJl-RF-Bjg">
                                                             <rect key="frame" x="86" y="8" width="299" height="79"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-9D-FyP">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-9D-FyP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="299" height="26.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -118,16 +118,26 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="aAW-2d-EF9"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="THy-QA-unm">
+                                <rect key="frame" x="0.0" y="108" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Gtj-Fo-w8g"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="THy-QA-unm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5hu-PE-cBa"/>
                             <constraint firstItem="I9e-Pc-kQp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="Bfo-94-j6x"/>
+                            <constraint firstItem="HnO-u1-14m" firstAttribute="top" secondItem="THy-QA-unm" secondAttribute="bottom" constant="10" id="C39-gu-nVM"/>
                             <constraint firstItem="HnO-u1-14m" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="DC7-Eq-yQx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HnO-u1-14m" secondAttribute="trailing" id="DE5-Zp-hcD"/>
+                            <constraint firstItem="THy-QA-unm" firstAttribute="top" secondItem="I9e-Pc-kQp" secondAttribute="bottom" constant="10" id="DfY-5b-dfX"/>
+                            <constraint firstItem="THy-QA-unm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="MQG-m9-xdL"/>
                             <constraint firstItem="I9e-Pc-kQp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PSs-pF-7Jc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="HnO-u1-14m" secondAttribute="bottom" id="oaP-ow-DJB"/>
-                            <constraint firstItem="HnO-u1-14m" firstAttribute="top" secondItem="I9e-Pc-kQp" secondAttribute="bottom" constant="16" id="yFf-HX-Iwd"/>
                         </constraints>
                     </view>
                     <connections>

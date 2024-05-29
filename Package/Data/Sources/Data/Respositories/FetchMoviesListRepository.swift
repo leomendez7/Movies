@@ -16,8 +16,8 @@ public class FetchMoviesListRepository: FetchMoviesListRepositoryProtocol {
         self.datasource = datasource
     }
     
-    public func fetchMoviesList() async throws -> [Movie] {
-        return try await datasource.fetchMoviesList()
+    public func fetchMoviesList(page: Int) async throws -> [Movie] {
+        return try await datasource.fetchMoviesList(page: page)
     }
     
 }

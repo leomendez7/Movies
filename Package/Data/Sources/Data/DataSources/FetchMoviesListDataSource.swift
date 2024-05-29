@@ -11,13 +11,15 @@ import Domain
 public class FetchMoviesListDataSource {
     
     let urlBase: String
+    let key: String
     
-    public init(urlBase: String) {
+    public init(urlBase: String, key: String) {
         self.urlBase = urlBase
+        self.key = key
     }
     
-    public func fetchMoviesList() async throws -> [Movie] {
-        let urlString = urlBase
+    public func fetchMoviesList(page: Int) async throws -> [Movie] {
+        let urlString = "\(urlBase)\(page)?api_key=\(key)"
         guard let url = URL(string: urlString) else {
             throw URLError(.badURL)
         }
@@ -33,8 +35,7 @@ public class FetchMoviesListDataSource {
         let decoder = JSONDecoder()
         do {
             let movieListResponse = try decoder.decode(MovieResponse.self, from: data)
-            let sortedMovies = movieListResponse.results.sorted(by: { ($0.popularity ?? 0) > ($1.popularity ?? 0) })
-            return sortedMovies
+            return movieListResponse.results
         } catch let decodingError as DecodingError {
             switch decodingError {
             case .typeMismatch(let type, let context):

@@ -9,6 +9,6 @@ import Foundation
 
 public protocol FetchMoviesListRepositoryProtocol {
     
-    func fetchMoviesList() async throws -> [Movie]
+    func fetchMoviesList(page: Int) async throws -> [Movie]
     
 }

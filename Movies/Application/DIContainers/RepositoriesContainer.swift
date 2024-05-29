@@ -12,10 +12,7 @@ import Domain
 final class RepositoriesContainer {
     
     class func reloadLoginRepositories() {
-        // DataSourcesContainer.reloadLoginApiClients()
-        
         RepositoriesContainer.fetchMoviesListRepository = FetchMoviesListRepository(datasource: DataSourcesContainer.fetchMoviesListDataSource)
-        
     }
     
     static var fetchMoviesListRepository = FetchMoviesListRepository(datasource: DataSourcesContainer.fetchMoviesListDataSource)

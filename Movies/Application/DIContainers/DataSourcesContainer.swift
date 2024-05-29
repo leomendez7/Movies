@@ -12,8 +12,8 @@ import Domain
 final class DataSourcesContainer {
     
     class func reloadLoginUrlBase() {
-        DataSourcesContainer.fetchMoviesListDataSource = FetchMoviesListDataSource(urlBase: UrlBaseContainer.urlBase)
+        DataSourcesContainer.fetchMoviesListDataSource = FetchMoviesListDataSource(urlBase: UrlBaseContainer.urlBase, key: UrlBaseContainer.key)
     }
     
-    static var fetchMoviesListDataSource = FetchMoviesListDataSource(urlBase: UrlBaseContainer.urlBase)
+    static var fetchMoviesListDataSource = FetchMoviesListDataSource(urlBase: UrlBaseContainer.urlBase, key: UrlBaseContainer.key)
 }

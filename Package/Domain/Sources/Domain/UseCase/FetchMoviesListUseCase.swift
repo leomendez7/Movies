@@ -15,8 +15,8 @@ public class FetchMoviesListUseCase: UseCaseProtocol {
         self.repository = repository
     }
     
-    public func execute(requestValue: String) async throws -> [Movie] {
-        return try await repository.fetchMoviesList()
+    public func execute(requestValue: Int) async throws -> [Movie] {
+        return try await repository.fetchMoviesList(page: requestValue)
     }
     
 }

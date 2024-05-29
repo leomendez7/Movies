@@ -36,7 +36,9 @@ class MoviesTableViewCell: UITableViewCell {
             guard let url = URL(string: safeURL) else {
                 return
             }
-            movieImage.loadImage(from: url)
+            DispatchQueue.main.async {
+                self.movieImage.loadImage(from: url)
+            }
         } else {
             movieImage.backgroundColor = UIColor.black
         }
