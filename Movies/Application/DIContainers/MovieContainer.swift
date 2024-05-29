@@ -29,6 +29,14 @@ final class MovieContainer: MoviesListFactory {
         return viewModel
     }
     
+    private func movieDetailsViewModel(movie: Movie) -> MovieDetailViewModel {
+        let coordinator = userCoordinator
+        let viewModel = MovieDetailViewModel(useCase: UseCasesContainer.fetchMoviesListUseCase,
+                              coordinator: coordinator)
+        viewModel.movie = movie
+        return viewModel
+    }
+    
     func moviesViewController() -> MoviesViewController {
         let identifier = "Movies"
         let storyBoard = UIStoryboard(name: identifier, bundle: Presentation.bundle)
@@ -38,11 +46,12 @@ final class MovieContainer: MoviesListFactory {
         return viewController
     }
     
-    func movieDetailViewController(movie: Movie) -> MovieDetailViewController {
+    @MainActor
+    func movieDetailViewController(movie: Movie) -> MovieDetailsViewController {
         let identifier = "MovieDetails"
         let storyBoard = UIStoryboard(name: identifier, bundle: Presentation.bundle)
         let viewController = storyBoard.instantiateViewController(identifier: identifier) { coder in
-            return MovieDetailViewController()
+            return MovieDetailsViewController(viewModel: self.movieDetailsViewModel(movie: movie), coder: coder)
         }
         return viewController
     }

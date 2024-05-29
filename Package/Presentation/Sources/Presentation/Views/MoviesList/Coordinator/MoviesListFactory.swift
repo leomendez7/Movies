@@ -11,6 +11,6 @@ import Domain
 public protocol MoviesListFactory {
     
     func moviesViewController() -> MoviesViewController
-    func movieDetailViewController(movie: Movie) -> MovieDetailViewController
+    func movieDetailViewController(movie: Movie) -> MovieDetailsViewController
     
 }

@@ -22,4 +22,10 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel
+            .coordinator
+            .navigate(to: .movieDetails(movie: viewModel.movies[indexPath.row]))
+    }
+    
 }

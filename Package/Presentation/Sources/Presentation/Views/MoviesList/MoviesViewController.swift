@@ -18,7 +18,7 @@ public class MoviesViewController: BaseViewController<MoviesListViewModel> {
     public override func viewDidLoad() {
         super.viewDidLoad()
         title = "Movies List"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
         viewModel.coordinator.navigationController = navigationController
         tableView.rowHeight = UITableView.automaticDimension
         subscribeToViewModel()
