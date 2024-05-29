@@ -34,9 +34,9 @@ public class MoviesViewController: BaseViewController<MoviesListViewModel> {
     @IBAction func changeMovieOrder(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            print("")
+            viewModel.sortedPopularity()
         case 1:
-            print("")
+            viewModel.sortedTopRate()
         default:
             break
         }

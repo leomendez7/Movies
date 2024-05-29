@@ -23,4 +23,21 @@ public class MoviesListViewModel: BaseViewModel<FetchMoviesListUseCase, MovieFlo
         }
     }
     
+    func sortedPopularity() {
+        let sortedMovies = movies.sorted(by: { ($0.popularity ?? 0) > ($1.popularity ?? 0) })
+        movies.removeAll()
+        sortedMovies.forEach { movie in
+            movies.append(movie)
+        }
+        reloadData.send()
+    }
+    
+    func sortedTopRate() {
+        let sortedMovies = movies.sorted(by: { ($0.voteAverage ?? 0) > ($1.voteAverage ?? 0) })
+        movies.removeAll()
+        sortedMovies.forEach { movie in
+            movies.append(movie)
+        }
+        reloadData.send()
+    }
 }

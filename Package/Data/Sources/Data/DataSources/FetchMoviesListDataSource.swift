@@ -33,7 +33,8 @@ public class FetchMoviesListDataSource {
         let decoder = JSONDecoder()
         do {
             let movieListResponse = try decoder.decode(MovieResponse.self, from: data)
-            return movieListResponse.results
+            let sortedMovies = movieListResponse.results.sorted(by: { ($0.popularity ?? 0) > ($1.popularity ?? 0) })
+            return sortedMovies
         } catch let decodingError as DecodingError {
             switch decodingError {
             case .typeMismatch(let type, let context):
