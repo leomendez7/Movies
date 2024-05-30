@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		16FC12CD2C054DFC00C40301 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12CC2C054DFC00C40301 /* AppDelegate.swift */; };
 		16FC12CF2C054DFC00C40301 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12CE2C054DFC00C40301 /* SceneDelegate.swift */; };
-		16FC12D12C054DFC00C40301 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12D02C054DFC00C40301 /* ViewController.swift */; };
+		16FC12D12C054DFC00C40301 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12D02C054DFC00C40301 /* MainController.swift */; };
 		16FC12D42C054DFC00C40301 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 16FC12D32C054DFC00C40301 /* Base */; };
 		16FC12D62C054DFE00C40301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FC12D52C054DFE00C40301 /* Assets.xcassets */; };
 		16FC12D92C054DFE00C40301 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 16FC12D82C054DFE00C40301 /* Base */; };
+		16FC12E62C05504D00C40301 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 16FC12E52C05504D00C40301 /* Data */; };
+		16FC12E82C05504D00C40301 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 16FC12E72C05504D00C40301 /* Domain */; };
+		16FC12EA2C05504D00C40301 /* Presentation in Frameworks */ = {isa = PBXBuildFile; productRef = 16FC12E92C05504D00C40301 /* Presentation */; };
+		16FC12F12C0677CA00C40301 /* MovieContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12F02C0677CA00C40301 /* MovieContainer.swift */; };
+		16FC12F32C06785C00C40301 /* UseCasesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12F22C06785C00C40301 /* UseCasesContainer.swift */; };
+		16FC12F52C06789500C40301 /* RepositoriesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12F42C06789500C40301 /* RepositoriesContainer.swift */; };
+		16FC12F72C0678C500C40301 /* DataSourcesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12F62C0678C500C40301 /* DataSourcesContainer.swift */; };
+		16FC12F92C0679A700C40301 /* UrlBaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC12F82C0679A700C40301 /* UrlBaseContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16FC12C92C054DFC00C40301 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FC12CC2C054DFC00C40301 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16FC12CE2C054DFC00C40301 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16FC12D02C054DFC00C40301 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16FC12D02C054DFC00C40301 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		16FC12D32C054DFC00C40301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16FC12D52C054DFE00C40301 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16FC12D82C054DFE00C40301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16FC12DA2C054DFE00C40301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16FC12E12C054FC200C40301 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		16FC12E22C05501E00C40301 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		16FC12E32C05503600C40301 /* Presentation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Presentation; sourceTree = "<group>"; };
+		16FC12F02C0677CA00C40301 /* MovieContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieContainer.swift; sourceTree = "<group>"; };
+		16FC12F22C06785C00C40301 /* UseCasesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesContainer.swift; sourceTree = "<group>"; };
+		16FC12F42C06789500C40301 /* RepositoriesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesContainer.swift; sourceTree = "<group>"; };
+		16FC12F62C0678C500C40301 /* DataSourcesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourcesContainer.swift; sourceTree = "<group>"; };
+		16FC12F82C0679A700C40301 /* UrlBaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBaseContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FC12E82C05504D00C40301 /* Domain in Frameworks */,
+				16FC12EA2C05504D00C40301 /* Presentation in Frameworks */,
+				16FC12E62C05504D00C40301 /* Data in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +59,10 @@
 		16FC12C02C054DFC00C40301 = {
 			isa = PBXGroup;
 			children = (
+				16FC12E02C054F8900C40301 /* Package */,
 				16FC12CB2C054DFC00C40301 /* Movies */,
 				16FC12CA2C054DFC00C40301 /* Products */,
+				16FC12E42C05504D00C40301 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +77,69 @@
 		16FC12CB2C054DFC00C40301 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				16FC12CC2C054DFC00C40301 /* AppDelegate.swift */,
-				16FC12CE2C054DFC00C40301 /* SceneDelegate.swift */,
-				16FC12D02C054DFC00C40301 /* ViewController.swift */,
-				16FC12D22C054DFC00C40301 /* Main.storyboard */,
-				16FC12D52C054DFE00C40301 /* Assets.xcassets */,
-				16FC12D72C054DFE00C40301 /* LaunchScreen.storyboard */,
+				16FC12EB2C05523900C40301 /* Application */,
 				16FC12DA2C054DFE00C40301 /* Info.plist */,
 			);
 			path = Movies;
+			sourceTree = "<group>";
+		};
+		16FC12E02C054F8900C40301 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12E12C054FC200C40301 /* Data */,
+				16FC12E22C05501E00C40301 /* Domain */,
+				16FC12E32C05503600C40301 /* Presentation */,
+			);
+			path = Package;
+			sourceTree = "<group>";
+		};
+		16FC12E42C05504D00C40301 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16FC12EB2C05523900C40301 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12ED2C05524E00C40301 /* DIContainers */,
+				16FC12EE2C05525900C40301 /* Launch */,
+				16FC12EF2C05526400C40301 /* Resources */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		16FC12ED2C05524E00C40301 /* DIContainers */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12F62C0678C500C40301 /* DataSourcesContainer.swift */,
+				16FC12F02C0677CA00C40301 /* MovieContainer.swift */,
+				16FC12F42C06789500C40301 /* RepositoriesContainer.swift */,
+				16FC12F82C0679A700C40301 /* UrlBaseContainer.swift */,
+				16FC12F22C06785C00C40301 /* UseCasesContainer.swift */,
+			);
+			path = DIContainers;
+			sourceTree = "<group>";
+		};
+		16FC12EE2C05525900C40301 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12CC2C054DFC00C40301 /* AppDelegate.swift */,
+				16FC12CE2C054DFC00C40301 /* SceneDelegate.swift */,
+				16FC12D02C054DFC00C40301 /* MainController.swift */,
+				16FC12D22C054DFC00C40301 /* Main.storyboard */,
+				16FC12D72C054DFE00C40301 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		16FC12EF2C05526400C40301 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				16FC12D52C054DFE00C40301 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +158,11 @@
 			dependencies = (
 			);
 			name = Movies;
+			packageProductDependencies = (
+				16FC12E52C05504D00C40301 /* Data */,
+				16FC12E72C05504D00C40301 /* Domain */,
+				16FC12E92C05504D00C40301 /* Presentation */,
+			);
 			productName = Movies;
 			productReference = 16FC12C92C054DFC00C40301 /* Movies.app */;
 			productType = "com.apple.product-type.application";
@@ -138,8 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16FC12D12C054DFC00C40301 /* ViewController.swift in Sources */,
+				16FC12D12C054DFC00C40301 /* MainController.swift in Sources */,
+				16FC12F52C06789500C40301 /* RepositoriesContainer.swift in Sources */,
+				16FC12F92C0679A700C40301 /* UrlBaseContainer.swift in Sources */,
 				16FC12CD2C054DFC00C40301 /* AppDelegate.swift in Sources */,
+				16FC12F32C06785C00C40301 /* UseCasesContainer.swift in Sources */,
+				16FC12F72C0678C500C40301 /* DataSourcesContainer.swift in Sources */,
+				16FC12F12C0677CA00C40301 /* MovieContainer.swift in Sources */,
 				16FC12CF2C054DFC00C40301 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5MRQMG4R3J;
@@ -305,8 +391,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Movies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.movies.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5MRQMG4R3J;
@@ -333,8 +421,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Movies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.movies.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,6 +452,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		16FC12E52C05504D00C40301 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		16FC12E72C05504D00C40301 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		16FC12E92C05504D00C40301 /* Presentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Presentation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 16FC12C12C054DFC00C40301 /* Project object */;
 }
