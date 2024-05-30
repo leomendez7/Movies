@@ -17,6 +17,7 @@ public class MovieDetailsViewController: BaseViewController<MovieDetailViewModel
     @IBOutlet weak var popularityLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var upcommingLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,17 +40,7 @@ public class MovieDetailsViewController: BaseViewController<MovieDetailViewModel
         popularityLabel.text = String(format: "Popularity: %.1f", movie.popularity ?? "")
         rateLabel.text = String(format: "Rate: %.1f", movie.voteAverage ?? "")
         upcommingLabel.text = String(format: "upcomming: %@", movie.releaseDate ?? "")
+        languageLabel.text = String(format: "Language: %@", movie.originalLanguage ?? "")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

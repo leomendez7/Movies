@@ -13,7 +13,7 @@ public class MoviesListViewModel: BaseViewModel<FetchMoviesListUseCase, MovieFlo
     var reloadData = PassthroughSubject<Void, Error>()
     var movies: [Movie] = []
     var pages: Int = 1
-    var isLoading = false
+    var isLoading = true
     var sortedByPopularity = true
     var filteredMovies: [Movie] = []
     private var searchText = ""
